@@ -2,27 +2,21 @@ import React, { useState } from 'react'
 
 export default function TextForm(props) {
     const handleUpCase = ()=> {
-        // console.log("UpCase was clicked" + text);
         let newtext = text.toUpperCase()
         setText(newtext);
         props.showalert("Converted to Uppercase!", "success");
     }
     const handlelowCase = ()=> {
-        // console.log("UpCase was clicked" + text);
         let newtext = text.toLowerCase()
         setText(newtext);
         props.showalert("Converted to Lowercase!", "success");
     }
     const handleCapCase = ()=> {
-        // console.log("UpCase was clicked" + text);
-        // let newtext = text.charAt(0).toUpperCase() + text.slice(1);
         let newtext = text.replace(/\b\w/g, c => c.toUpperCase());
-        console.log(newtext);
         setText(newtext);
         props.showalert("Converted to Capcase!", "success");
     }
     const handleClear = ()=> {
-        // console.log("UpCase was clicked" + text);
         let newtext = ''
         setText(newtext);
         props.showalert("Textbox Cleared!", "success");
@@ -42,7 +36,6 @@ export default function TextForm(props) {
     }
 
     const handleOnChange = (event)=> {
-        // console.log("On change");
         setText(event.target.value);   
     }
     const [text, setText] = useState('');
